@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="it">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Scuola Sportiva</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container-fluid">
+			<form class="container-fluid justify-content-start" action="/firstPage" method="GET">
+				<a class="navbar-brand" href="/firstPage">Scuola sportiva La Marmotta</a>
+			</form>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<form class="container-fluid justify-content-start" action="/sport" method="GET">
+							<button class="btn btn-outline-success me-2" type="submit">Sport</button>
+						</form>
+					</li>
+					<li class="nav-item">
+						<form class="container-fluid justify-content-start" action="/sedi" method="GET">
+							<button class="btn btn-outline-success me-2" type="submit">Sedi</button>
+						</form>
+					</li>
+					<li class="nav-item">
+						<form class="container-fluid justify-content-start" action="/istruttori" method="GET">
+							<button class="btn btn-outline-success me-2" type="submit">Istruttori</button>
+						</form>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+<div class="col-8 m-auto">
+
+
+
+		<div class="card">
+			<div class="card-header">
+				<h1 class="card-text">Info generali</h1>
+			</div>
+			<div class="card-body">
+
+				<h5 class="card-text">
+					Sport: <span th:text="${sede.sport}"> </span>
+				</h5>
+				<h5 class="card-text">
+					Città: <span th:text="${sede.citta}"> </span>
+				</h5>
+				<h5 class="card-text">
+					Via: <span th:text="${sede.via}"> </span>
+				</h5>
+			</div>
+		</div>
+
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

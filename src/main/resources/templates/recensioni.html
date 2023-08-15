@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="it">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Scuola Sportiva</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container-fluid">
+			<form class="container-fluid justify-content-start" action="/firstPage" method="GET">
+				<a class="navbar-brand" href="/firstPage">Scuola sportiva La Marmotta</a>
+			</form>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<form class="container-fluid justify-content-start" action="/sport" method="GET">
+							<button class="btn btn-outline-success me-2" type="submit">Sport</button>
+						</form>
+					</li>
+					<li class="nav-item">
+						<form class="container-fluid justify-content-start" action="/sedi" method="GET">
+							<button class="btn btn-outline-success me-2" type="submit">Sedi</button>
+						</form>
+					</li>
+					<li class="nav-item">
+						<form class="container-fluid justify-content-start" action="/istruttori" method="GET">
+							<button class="btn btn-outline-success me-2" type="submit">Istruttori</button>
+						</form>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	<div class="card col-8 m-auto">
+
+
+		<h1 class="col">Le nostre recensioni:</h1>
+
+		<ul th:each="recensione: ${recensioni}">
+			<li class="list-group-item mb-5">
+				<hr class="border border-primary border-3 opacity-75">
+				<h3 th:text="${recensione.nome}"> </h3>
+				<h4 th:text="${recensione.titolo}"> </h4>
+				<h5 th:text="${recensione.recensione}"> </h5>
+				
+			</li>
+		</ul>
+
+
+	</div>
+
+
+	<div class="container">
+		<div class="card mt-5">
+			<form action="/recensione/create" method="POST">
+
+				<div class="card-head">
+					<h3>Inserisci una recensione</h3>
+				</div>
+				<div class="card-body">
+
+					<div class="row">
+						<hr>
+						<div class="col">
+							<label for=nome>Nome</label>
+							<input type="text" name="nome" class="form-control" id="nome" required>
+						</div>
+						<hr>
+						<div class="col">
+							<label for=titolo>Titolo</label>
+							<input type="text" name="titolo" class="form-control" id="titolo" required>
+						</div>
+						<hr>
+						<div class="col">
+							<label for=tipoAnimale>Recensione</label>
+							<input type="text" name="recensione" class="form-control" id="recensione" required>
+						</div>
+
+					</div>
+
+					<div class="card-footer">
+						<button type="submit" class="btn btn-outline-primary">Inserisci</button>
+					</div>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>
