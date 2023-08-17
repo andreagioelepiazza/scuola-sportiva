@@ -26,7 +26,7 @@ public class SedeController {
 		
 	}
 
-	//Metodo che 
+	//Metodo che porta a una pagina che mostra dettagli di un singolo oggetto di tipo "Sede" 
 	@RequestMapping(value="/sede/{id}", method = RequestMethod.GET)
 	public String sede (@PathVariable Long id, Model model) {
 
