@@ -22,7 +22,8 @@ public class SportController {
 	SportService ss;
 	@Autowired
 	IstruttoreService is;
-	
+
+	//Metodo che porta alla pagina principale
 	@RequestMapping(value="/firstPage", method = RequestMethod.GET)
 	public String firstPage() {
 		
@@ -30,7 +31,7 @@ public class SportController {
 	}
 	
 	
-	
+	//Metodo che porta ad una pagina che mostra una lista degli oggetti di tipo "Sport"
 	@RequestMapping(value="/sport", method = RequestMethod.GET)
 	public String lista(Model model) {
 	
@@ -40,11 +41,7 @@ public class SportController {
 		
 	}
 	
-	@RequestMapping(value="/sediPage", method = RequestMethod.GET)
-	public String sediPage() {
-		
-		return "sedi";
-	}
+	
 	
 	
 	
