@@ -16,21 +16,17 @@ public class SedeController {
 	
 	@Autowired
 	SedeService sr;
-	
+	//Metodo che porta ad una pagina che mostra una lista degli oggetti di tipo "Sede"
 	@RequestMapping(value="/sedi", method = RequestMethod.GET)
 	public String listaSedi(Model model) {
-
-		for (Sede s : sr.getAllSedi()) {
-			System.out.println(s.getCitta());
-			System.out.println(s.getVia());
-		}
 		
 		model.addAttribute("sedi", sr.getAllSedi());
 		
 		return "listaSedi";
 		
 	}
-	
+
+	//Metodo che 
 	@RequestMapping(value="/sede/{id}", method = RequestMethod.GET)
 	public String sede (@PathVariable Long id, Model model) {
 
