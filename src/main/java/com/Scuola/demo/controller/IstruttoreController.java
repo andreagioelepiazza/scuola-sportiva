@@ -17,7 +17,7 @@ public class IstruttoreController {
 	@Autowired
 	IstruttoreService is;
 	
-	
+	//Metodo che porta ad una pagina che mostra una lista degli oggetti di tipo "Istruttore"
 	@RequestMapping(value="/istruttori", method = RequestMethod.GET)
 	public String listaIstruttori(Model model) {
 
@@ -27,6 +27,7 @@ public class IstruttoreController {
 		
 	}
 	
+	//Metodo che porta a una pagina che mostra dettagli di un singolo oggetto di tipo "Istruttore"
 	@RequestMapping(value="/istruttore/{id}", method = RequestMethod.GET)
 	public String istruttore(@PathVariable Long id, Model model) {
 
